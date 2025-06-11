@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ValidaLacta - Controle de Validade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="Logo_Lacta_2021.svg.png" alt="ValidaLacta" class="logo" />
+      <h1>ValidaLacta</h1>
+      <p class="subtitulo">Controle de Validade de Produtos Lacta</p>
+    </header>
+
+    <form id="formulario">
+      <input type="text" id="produto" placeholder="Nome do produto" required />
+      <input type="date" id="fabricacao" required />
+      <input type="date" id="validade" required />
+      <button type="submit">Adicionar Produto</button>
+    </form>
+
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Fabricação</th>
+          <th>Validade</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
