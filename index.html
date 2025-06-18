@@ -2,39 +2,73 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ValidaLacta - Controle de Validade</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="Logo_Lacta_2021.svg.png" alt="ValidaLacta" class="logo" />
-      <h1>ValidaLacta</h1>
-      <p class="subtitulo">Controle de Validade de Produtos Lacta</p>
-    </header>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="Logo_Lacta_2021.svg.png" alt="ValidaLacta Logo" class="logo" />
+      <h2>ValidaLacta</h2>
+      <nav>
+        <ul>
+          <li onclick="navegar('dashboard')">Dashboard</li>
+          <li onclick="navegar('produtos')">Produtos</li>
+          <li onclick="navegar('relatorios')">Informações</li>
+        </ul>
+      </nav>
+    </aside>
 
-    <form id="formulario">
-      <input type="text" id="produto" placeholder="Nome do produto" required />
-      <input type="date" id="fabricacao" required />
-      <input type="date" id="validade" required />
-      <button type="submit">Adicionar Produto</button>
-    </form>
+    <!-- Conteúdo principal -->
+    <main class="main">
+      <div class="container">
+        <header>
+          <h1>Controle de Validade de Produtos Lácteos</h1>
+        </header>
 
-    <table id="tabela">
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Fabricação</th>
-          <th>Validade</th>
-          <th>Status</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+        <div id="dashboard" class="secao">
+          <h2>Painel de Controle</h2>
+          <p>Total de produtos: <span id="total"></span></p>
+          <p>Vencidos: <span id="vencidos"></span></p>
+          <p>Próximos do vencimento: <span id="proximos"></span></p>
+          <p>Dentro do prazo: <span id="validos"></span></p>
+        </div>
+
+        <div id="produtos" class="secao">
+          <form id="formulario">
+            <input type="text" id="produto" placeholder="Nome do produto" required />
+            <input type="date" id="fabricacao" required />
+            <input type="date" id="validade" required />
+            <button type="submit">Adicionar Produto</button>
+          </form>
+
+          <table id="tabela">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Fabricação</th>
+                <th>Validade</th>
+                <th>Status</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="relatorios" class="secao">
+          <h2>Informações sobre Validade e Cuidados</h2>
+          <div id="relatorio">
+            <p>A Lacta preza pela qualidade e segurança alimentar de seus consumidores. Todos os produtos são cuidadosamente monitorados desde a fabricação até a distribuição, garantindo que cheguem ao consumidor dentro do prazo ideal de consumo.</p>
+            <p>Este sistema foi desenvolvido para auxiliar o controle de validade, prevenindo perdas e otimizando a gestão de estoque. Produtos próximos do vencimento são destacados para que medidas sejam tomadas rapidamente.</p>
+            <p>Consuma produtos sempre dentro do prazo de validade para garantir sabor, qualidade e segurança. A Lacta reafirma seu compromisso com a excelência em cada etapa do processo.</p>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
